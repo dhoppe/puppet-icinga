@@ -1,0 +1,80 @@
+# Class: icinga
+#   This module manages icinga
+#
+# Definition:
+#   icinga::command::commands
+#   icinga::contact::contacts
+#   icinga::contact::contactgroups
+#   icinga::host::hosts
+#   icinga::host::hostgroups
+#   icinga::host::hostextinfo
+#   icinga::service::services
+#   icinga::service::servicegroups
+#   nagios-nrpe::whitelist
+#
+# Parameters:
+#   Commands:
+#      $command - specify the command_line
+#
+#   Contacts:
+#      $alias - specify the contact
+#      $email - specify the email, default is root@localhost
+#      $group - specify the contactgroup
+#
+#   Contactgroups:
+#      $alias - specify the contactgroup
+#
+#   Services:
+#      $command - specify the check_command
+#      $group   - specify the servicegroups
+#
+#   Nagios-NRPE:
+#      $whitelist - specify the whitelist, default is 127.0.0.1
+#
+# Actions:
+#   Installs the icinga.cfg etc.
+#
+# Requires:
+#
+# Sample Usage:
+#   icinga::command::commands { "nrpe_check_apt":
+#      command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_apt',
+#   }
+#
+#   icinga::contact::contacts { "hotkey":
+#      alias => "Dennis Hoppe",
+#      email => "icinga@${::domain}",
+#      group => "admins",
+#   }
+#   
+#   icinga::contact::contactgroups { "admins":
+#      alias => "Debian Solutions"
+#   }
+#   
+#   icinga::host::hosts { "$::hostname": }
+#   
+#   icinga::host::hostgroups { [
+#      "lenny",
+#      "squeeze",
+#      "maverick",
+#      "natty" ]:
+#   }
+#   
+#   icinga::host::hostextinfo { "$::hostname": }
+#   
+#   icinga::service::services { "apt":
+#      command => "nrpe_check_apt",
+#   }
+#   
+#   icinga::service::servicegroups { [
+#      "apt",
+#      "disks",
+#      "interfaces",
+#      "kernel",
+#      "libs",
+#      "load",
+#      "procs",
+#      "smart",
+#      "swap",
+#      "user" ]:
+#   }
