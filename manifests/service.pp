@@ -6,6 +6,7 @@ class icinga::service {
 		"kernel",
 		"libs",
 		"load",
+		"ntp",
 		"procs",
 		"smart",
 		"swap",

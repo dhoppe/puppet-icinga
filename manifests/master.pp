@@ -9,6 +9,7 @@ class icinga::master inherits icinga {
 		unless  => "dpkg-statoverride --list nagios nagios 751 /var/lib/icinga && dpkg-statoverride --list nagios www-data 2710 /var/lib/icinga/rw",
 		notify  => Service["icinga"],
 	}
+
 	# Bug: 3299
 	exec { "fix-permissions":
 		command     => "chmod -R go+r /etc/icinga/objects",
