@@ -41,6 +41,10 @@ class icinga::command {
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_procs_zombie -a $ARG1$ $ARG2$',
 	}
 
+	icinga::command::commands { "nrpe_check_puppet":
+		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_puppet -a $ARG1$ $ARG2$',
+	}
+
 	icinga::command::commands { "nrpe_check_swap":
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_swap -a $ARG1$ $ARG2$',
 	}

@@ -8,6 +8,7 @@ class icinga::service {
 		"load",
 		"ntp",
 		"procs",
+		"puppet",
 		"smart",
 		"swap",
 		"user" ]:
