@@ -74,6 +74,12 @@ class icinga {
 		ensure => present,
 	}
 
+	if $::lsbdistcodename == "lenny" {
+		package { "ruby":
+			ensure => present,
+		}
+	}
+
 	service { "nagios-nrpe-server":
 		enable     => true,
 		ensure     => running,
