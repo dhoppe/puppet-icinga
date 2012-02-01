@@ -6,6 +6,7 @@ class icinga::service {
 		"kernel",
 		"libs",
 		"load",
+		"mailq",
 		"ntp",
 		"procs",
 		"puppet",

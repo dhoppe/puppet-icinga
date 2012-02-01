@@ -21,6 +21,10 @@ class icinga::command {
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_iflocal -a $ARG1$',
 	}
 
+	icinga::command::commands { "nrpe_check_mailq":
+		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_mailq -a $ARG1$ $ARG2$',
+	}
+
 	icinga::command::commands { "nrpe_check_kernel":
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_kernel',
 	}
