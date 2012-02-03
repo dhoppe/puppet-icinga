@@ -26,6 +26,7 @@ class icinga::master inherits icinga {
 		notify  => Service["icinga"],
 		source  => "puppet:///modules/icinga/${::lsbdistcodename}/etc/icinga",
 		require => Package["icinga"],
+		before  => Class['icinga::command']
 	}
 
 	file { "/etc/icinga/htpasswd.users":
