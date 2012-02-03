@@ -28,6 +28,17 @@ class icinga::master inherits icinga {
 		require => Package["icinga"],
 	}
 
+	file {
+		"/etc/icinga/objects/generic-service_icinga.cfg":
+			ensure => absent;
+		"/etc/icinga/objects/generic-host_icinga.cfg":
+			ensure => absent;
+		"/etc/icinga/objects/timeperiods_icinga.cfg":
+			ensure => absent;
+		"/etc/icinga/objects/contacts_icinga.cfg":
+			ensure => absent;
+	}
+
 	file { "/etc/icinga/htpasswd.users":
 		owner   => root,
 		group   => root,
