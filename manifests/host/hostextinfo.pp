@@ -1,5 +1,5 @@
 define icinga::host::hostextinfo() {
-	$distro = inline_template("<%= lsbdistid.downcase -%>")
+	$distro = inline_template("<%= scope.lookupvar('::lsbdistid').downcase -%>")
 
 	@@nagios_hostextinfo { "$name":
 		ensure          => present,
