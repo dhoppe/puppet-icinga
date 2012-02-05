@@ -58,7 +58,8 @@ class icinga::command {
 	}
 
 	Nagios_command <||> {
-		notify => Exec["fix-permissions"],
+		notify  => Exec["fix-permissions"],
+		require => File["objects"],
 	}
 }
 

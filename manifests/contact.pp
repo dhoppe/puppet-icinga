@@ -10,11 +10,13 @@ class icinga::contact {
 	}
 
 	Nagios_contact <||> {
-		notify => Exec["fix-permissions"],
+		notify  => Exec["fix-permissions"],
+		require => File["objects"],
 	}
 
 	Nagios_contactgroup <||> {
-		notify => Exec["fix-permissions"],
+		notify  => Exec["fix-permissions"],
+		require => File["objects"],
 	}
 }
 

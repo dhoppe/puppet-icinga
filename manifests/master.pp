@@ -37,12 +37,14 @@ class icinga::master inherits icinga {
 	}
 
 	file { "/etc/icinga/objects":
+		force   => true,
+		purge   => true,
 		recurse => true,
 		owner   => root,
 		group   => root,
 		mode    => 0644,
 		alias   => "objects",
-		notify  => Service["icinga"],
+		# notify  => Service["icinga"],
 		source  => "puppet:///modules/icinga/common/etc/icinga/objects",
 		require => Package["icinga"],
 	}

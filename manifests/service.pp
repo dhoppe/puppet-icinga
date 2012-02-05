@@ -16,11 +16,13 @@ class icinga::service {
 	}
 
 	Nagios_service <<||>> {
-		notify => Exec["fix-permissions"],
+		notify  => Exec["fix-permissions"],
+		require => File["objects"],
 	}
 
 	Nagios_servicegroup <||> {
-		notify => Exec["fix-permissions"],
+		notify  => Exec["fix-permissions"],
+		require => File["objects"],
 	}
 }
 
