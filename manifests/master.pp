@@ -37,22 +37,64 @@ class icinga::master inherits icinga {
 	}
 
 	file { "/etc/icinga/objects":
-		force   => true,
-		purge   => true,
 		recurse => true,
 		owner   => root,
 		group   => root,
 		mode    => 0644,
 		alias   => "objects",
-		# notify  => Service["icinga"],
+		notify  => Service["icinga"],
 		source  => "puppet:///modules/icinga/common/etc/icinga/objects",
 		require => Package["icinga"],
+	}
+
+	file { [
+		"/etc/icinga/objects/contacts_icinga.cfg",
+		"/etc/icinga/objects/extinfo_icinga.cfg",
+		"/etc/icinga/objects/generic-host_icinga.cfg",
+		"/etc/icinga/objects/generic-service_icinga.cfg",
+		"/etc/icinga/objects/hostgroups_icinga.cfg",
+		"/etc/icinga/objects/localhost_icinga.cfg",
+		"/etc/icinga/objects/services_icinga.cfg",
+		"/etc/icinga/objects/timeperiods_icinga.cfg" ]:
+		ensure => absent,
 	}
 
 	package { [
 		"icinga",
 		"nagios-nrpe-plugin" ]:
 		ensure => present,
+	}
+
+	resources { "nagios_command":
+		purge => true,
+	}
+
+	resources { "nagios_contact":
+		purge => true,
+	}
+
+	resources { "nagios_contactgroup":
+		purge => true,
+	}
+
+	resources { "nagios_host":
+		purge => true,
+	}
+
+	resources { "nagios_hostgroup":
+		purge => true,
+	}
+
+	resources { "nagios_hostextinfo":
+		purge => true,
+	}
+
+	resources { "nagios_service":
+		purge => true,
+	}
+
+	resources { "nagios_servicegroup":
+		purge => true,
 	}
 
 	service { "icinga":
