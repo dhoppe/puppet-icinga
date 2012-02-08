@@ -11,6 +11,7 @@ class icinga::service {
 		"procs",
 		"puppet",
 		"smart",
+		"ssh",
 		"swap",
 		"user" ]:
 	}
