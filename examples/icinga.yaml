@@ -21,7 +21,7 @@ sgroups:
    - 'ssh'
    - 'swap'
    - 'user'
-email: 'icinga@debian-solutions.de'
+email: 'icinga@%{domain}'
 group: 'admins'
 user: 'hotkey'
 whitelist:
