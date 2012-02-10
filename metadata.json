@@ -6,10 +6,11 @@
   "project_page": "http://github.com/dhoppe/puppet-icinga",
   "source": "git://github.com/dhoppe/puppet-icinga",
   "summary": "Icinga Module",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "checksums": {
-    "Modulefile": "3aba16e918c6f6e8f8e8823c96389518",
-    "README": "98144b3c6a0ab789793f1fc7114174d0",
+    "Modulefile": "d032c51b1a1d75eb36c7c14d1b9e2605",
+    "README": "2c9c65aa3b969bcb4aad88cb3857a3ac",
+    "examples/icinga.yaml": "10d129078df43a303c814b01e070448c",
     "files/common/etc/icinga/htpasswd.users": "eea36c1b7691e30b4c78c8f0c51d7c50",
     "files/common/etc/icinga/objects/generic-contact.cfg": "90472bfed87fb11c737ec6e6dd849334",
     "files/common/etc/icinga/objects/generic-host.cfg": "777986a830da33f2e19c05aaa1b3a15b",
@@ -45,16 +46,16 @@
     "manifests/command.pp": "0a463fc43fa9ad261aa8328fbfce9b3b",
     "manifests/command/commands.pp": "844c0774862abd0da7a1ff16e9ec6def",
     "manifests/common.pp": "e0a15f22d3609490f5cc1cf96b6e895d",
-    "manifests/contact.pp": "c532f1f1ca8a55c458447a3b07af7501",
+    "manifests/contact.pp": "31deac636e2365b4ccf3d7e2a27341e2",
     "manifests/contact/contactgroups.pp": "a442a3f000f01b497da7f66c1290b72c",
     "manifests/contact/contacts.pp": "95097b44cc5c2a07a41ef88242d00a19",
-    "manifests/host.pp": "647395c52ebdc57e89f5432b1a9c525c",
+    "manifests/host.pp": "4b314828684801509b703a2f6dfff76b",
     "manifests/host/hostextinfo.pp": "ece70b989366464a3bd3a7f39578d1c4",
     "manifests/host/hostgroups.pp": "4c1d171ee00e8a542646ee3492b5c3f8",
     "manifests/host/hosts.pp": "1c8edadab61988398b20840dfcdb8b8f",
-    "manifests/init.pp": "a23b65bc3b15d8a974b1fe537392ca82",
+    "manifests/init.pp": "4d6166849f8114faaf852d87771135fb",
     "manifests/master.pp": "d34d90b60b2c33754b3444a7621baed3",
-    "manifests/service.pp": "5ab63e218aaf993b4d42bfd05b3ab9bb",
+    "manifests/service.pp": "0b73a3166e2831eaf1805d6011ba466f",
     "manifests/service/servicegroups.pp": "4e9d9411cf727b7836d0335a7207769d",
     "manifests/service/services.pp": "972d667a0803abfdffdfb22a2375df73",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
@@ -64,6 +65,10 @@
     "tests/init.pp": "e871d9ed4962c385f4f290d198c32fdb"
   },
   "dependencies": [
+    {
+      "name": "dhoppe/puppet",
+      "versionRequirement": "\u003e\u003d0.0.1"
+    },
     {
       "name": "dhoppe/role",
       "versionRequirement": "\u003e\u003d0.0.1"

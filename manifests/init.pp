@@ -38,10 +38,7 @@ class icinga {
 	}
 
 	nagios-nrpe::whitelist { "/etc/nagios/nrpe.cfg":
-		whitelist => [
-			"127.0.0.1",
-			"192.168.122.110"
-		],
+		whitelist => hiera('whitelist'),
 	}
 
 	file { "/etc/nagios/nrpe.d":

@@ -1,10 +1,7 @@
 class icinga::host {
-	icinga::host::hostgroups { [
-		"lenny",
-		"squeeze",
-		"maverick",
-		"natty" ]:
-	}
+	$hgroups = hiera_array('hgroups')
+
+	icinga::host::hostgroups { $hgroups: }
 
 	Nagios_host <<||>> {
 		notify  => Exec["fix-permissions"],

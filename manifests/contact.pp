@@ -1,12 +1,15 @@
 class icinga::contact {
-	icinga::contact::contacts { "hotkey":
-		alias => "Dennis Hoppe",
-		email => "icinga@${::domain}",
-		group => "admins",
+	$user = hiera('user')
+	$group = hiera('group')
+
+	icinga::contact::contacts { "$user":
+		alias => hiera('calias'),
+		email => hiera('email'),
+		group => hiera('group'),
 	}
 
-	icinga::contact::contactgroups { "admins":
-		alias => "Debian Solutions"
+	icinga::contact::contactgroups { "$group":
+		alias => hiera('galias'),
 	}
 
 	Nagios_contact <||> {
