@@ -1,12 +1,18 @@
 ---
-calias: 'Dennis Hoppe'
-galias: 'Debian Solutions'
-hgroups:
+contacts:
+   user: 'hotkey'
+   alias: 'Dennis Hoppe'
+   email: 'icinga@%{domain}'
+   group: 'admins'
+contactgroups:
+   group: 'admins'
+   alias: 'Debian Solutions'
+hostgroups:
    - 'lenny'
    - 'squeeze'
    - 'maverick'
    - 'natty'
-sgroups:
+servicegroups:
    - 'apt'
    - 'disks'
    - 'interfaces'
@@ -21,9 +27,6 @@ sgroups:
    - 'ssh'
    - 'swap'
    - 'user'
-email: 'icinga@%{domain}'
-group: 'admins'
-user: 'hotkey'
 whitelist:
    - '127.0.0.1'
    - '192.168.122.110'

@@ -1,15 +1,15 @@
 class icinga::contact {
-	$user = hiera('user')
-	$group = hiera('group')
+	$contacts = hiera('contacts')
+	$contactgroups = hiera('contactgroups')
 
-	icinga::contact::contacts { "$user":
-		alias => hiera('calias'),
-		email => hiera('email'),
-		group => hiera('group'),
+	icinga::contact::contacts { $contacts[user]:
+		alias => $contacts[alias],
+		email => $contacts[email],
+		group => $contacts[group],
 	}
 
-	icinga::contact::contactgroups { "$group":
-		alias => hiera('galias'),
+	icinga::contact::contactgroups { $contactgroups[group]:
+		alias => $contactgroups[alias],
 	}
 
 	Nagios_contact <||> {

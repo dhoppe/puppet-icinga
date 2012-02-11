@@ -1,7 +1,7 @@
 class icinga::host {
-	$hgroups = hiera_array('hgroups')
+	$hostgroups = hiera_array('hostgroups')
 
-	icinga::host::hostgroups { $hgroups: }
+	icinga::host::hostgroups { $hostgroups: }
 
 	Nagios_host <<||>> {
 		notify  => Exec["fix-permissions"],

@@ -1,7 +1,7 @@
 class icinga::service {
-	$sgroups = hiera_array('sgroups')
+	$servicegroups = hiera_array('servicegroups')
 
-	icinga::service::servicegroups { $sgroups: }
+	icinga::service::servicegroups { $servicegroups: }
 
 	Nagios_service <<||>> {
 		notify  => Exec["fix-permissions"],
