@@ -28,11 +28,12 @@ class icinga::master inherits icinga {
 		require => Package["icinga"],
 	}
 
+	$htpasswd = hiera('htpasswd')
 	file { "/etc/icinga/htpasswd.users":
 		owner   => root,
 		group   => root,
 		mode    => 0644,
-		source  => "puppet:///modules/icinga/common/etc/icinga/htpasswd.users",
+		content => template("icinga/common/etc/icinga/htpasswd.users.erb"),
 		require => Package["icinga"],
 	}
 
