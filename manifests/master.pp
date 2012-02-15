@@ -28,7 +28,6 @@ class icinga::master inherits icinga {
 		require => Package["icinga"],
 	}
 
-	$htpasswd = hiera('htpasswd')
 	file { "/etc/icinga/htpasswd.users":
 		owner   => root,
 		group   => root,

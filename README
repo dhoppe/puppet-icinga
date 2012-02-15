@@ -35,6 +35,7 @@
 #   Installs the icinga.cfg etc.
 #
 # Requires:
+#   -
 #
 # Sample Usage:
 #   icinga::command::commands { "nrpe_check_apt":
