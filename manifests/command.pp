@@ -13,6 +13,10 @@ class icinga::command {
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_cert -a $ARG1$',
 	}
 
+	icinga::command::commands { "nrpe_check_crm":
+		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_crm',
+	}
+
 	icinga::command::commands { "nrpe_check_disk":
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_disk -a $ARG1$ $ARG2$ $ARG3$',
 	}

@@ -65,6 +65,7 @@ class icinga {
 
 	package { [
 		"binutils",
+		"libnagios-plugin-perl",
 		"nagios-nrpe-server",
 		"nagios-plugins-basic",
 		"nagios-plugins-standard" ]:
