@@ -21,6 +21,10 @@ class icinga::command {
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_disk -a $ARG1$ $ARG2$ $ARG3$',
 	}
 
+	icinga::command::commands { "nrpe_check_drbd":
+		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_drbd -a $ARG1$',
+	}
+
 	icinga::command::commands { "nrpe_check_ide_smart":
 		command => '$USER1$/check_nrpe -H $HOSTADDRESS$ -c check_ide_smart -a $ARG1$',
 	}
