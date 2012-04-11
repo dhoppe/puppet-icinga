@@ -16,7 +16,7 @@ define icinga::service::services($command = false, $group = false) {
 		host_name           => $::hostname,
 		servicegroups       => $t_group,
 		service_description => $name,
-		use                 => "generic-service",
+		use                 => 'generic-service',
 		target              => "/etc/icinga/objects/${::hostname}_services.cfg",
 	}
 }

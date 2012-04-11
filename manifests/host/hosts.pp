@@ -4,7 +4,7 @@ define icinga::host::hosts() {
 		alias      => $::hostname,
 		address    => $::ipaddress,
 		hostgroups => $::lsbdistcodename,
-		use        => "generic-host",
+		use        => 'generic-host',
 		target     => "/etc/icinga/objects/${::hostname}_hosts.cfg",
 	}
 }
