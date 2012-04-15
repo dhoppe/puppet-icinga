@@ -65,11 +65,16 @@ class icinga {
 
 	package { [
 		'binutils',
-		'libnagios-plugin-perl',
 		'nagios-nrpe-server',
 		'nagios-plugins-basic',
 		'nagios-plugins-standard' ]:
 		ensure => present,
+	}
+
+	if $::lsbdistcodename != 'lenny' {
+		package { 'libnagios-plugin-perl':
+			ensure => present,
+		}
 	}
 
 	service { 'nagios-nrpe-server':
