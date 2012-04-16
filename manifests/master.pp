@@ -17,6 +17,18 @@ class icinga::master inherits icinga {
 		notify      => Service['icinga'],
 	}
 
+	if $::lsbdistcodename == 'squeeze' {
+		file { '/etc/default/npcd':
+			owner   => root,
+			group   => root,
+			mode    => '0644',
+			alias   => 'npcd',
+			source  => "puppet:///modules/icinga/${::lsbdistcodename}/etc/default/npcd",
+			notify  => Service['npcd'],
+			require => Package['pnp4nagios'],
+		}
+	}
+
 	file { '/etc/icinga':
 		recurse => true,
 		owner   => root,
@@ -43,7 +55,10 @@ class icinga::master inherits icinga {
 		mode    => '0644',
 		alias   => 'objects',
 		notify  => Service['icinga'],
-		source  => 'puppet:///modules/icinga/common/etc/icinga/objects',
+		source  => [
+			"puppet:///modules/icinga/${::lsbdistcodename}/etc/icinga/objects",
+			'puppet:///modules/icinga/common/etc/icinga/objects'
+		],
 		require => Package['icinga'],
 	}
 
@@ -63,6 +78,12 @@ class icinga::master inherits icinga {
 		'icinga',
 		'nagios-nrpe-plugin' ]:
 		ensure => present,
+	}
+
+	if $::lsbdistcodename == 'squeeze' {
+		package { 'pnp4nagios':
+			ensure => present,
+		}
 	}
 
 	resources { 'nagios_command':
@@ -107,6 +128,19 @@ class icinga::master inherits icinga {
 			File['objects'],
 			Package['icinga']
 		],
+	}
+
+	if $::lsbdistcodename == 'squeeze' {
+		service { 'npcd':
+			ensure     => running,
+			enable     => true,
+			hasrestart => true,
+			hasstatus  => true,
+			require    => [
+				File['npcd'],
+				Package['pnp4nagios']
+			],
+		}
 	}
 }
 
