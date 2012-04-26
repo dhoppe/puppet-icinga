@@ -1,5 +1,5 @@
 class icinga::host {
-	$hostgroups = hiera_array('hostgroups')
+	$hostgroups = hiera('hostgroups')
 
 	icinga::host::hostgroups { $hostgroups: }
 

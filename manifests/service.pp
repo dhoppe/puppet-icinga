@@ -1,5 +1,5 @@
 class icinga::service {
-	$servicegroups = hiera_array('servicegroups')
+	$servicegroups = hiera('servicegroups')
 
 	icinga::service::servicegroups { $servicegroups: }
 
