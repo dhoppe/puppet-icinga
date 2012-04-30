@@ -1,5 +1,5 @@
 name 'dhoppe-icinga'
-version '0.0.24'
+version '0.0.25'
 
 author 'Dennis Hoppe'
 license 'GPLv2'
