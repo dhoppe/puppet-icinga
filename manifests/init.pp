@@ -1,6 +1,13 @@
 class icinga {
 	include icinga::common
 
+	validate_hash(hiera('contacts'))
+	validate_hash(hiera('contactgroups'))
+	validate_array(hiera('hostgroups'))
+	validate_array(hiera('servicegroups'))
+	validate_hash(hiera('htpasswd'))
+	validate_array(hiera('whitelist'))
+
 	define nagios-nrpe::whitelist($whitelist = false) {
 		$t_whitelist = $whitelist ? {
 			false   => '127.0.0.1',
