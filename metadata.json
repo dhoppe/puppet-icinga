@@ -6,9 +6,9 @@
   "project_page": "http://github.com/dhoppe/puppet-icinga",
   "source": "git://github.com/dhoppe/puppet-icinga",
   "summary": "Icinga Module",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "checksums": {
-    "Modulefile": "19809552176c497341fca4afc5c3508c",
+    "Modulefile": "d4dbe54e402d8e8774de2fc1dbe068fe",
     "README": "0d054da72567eeaec961a4051cd57848",
     "examples/icinga.yaml": "43edb01df80d25528cd55040b49da172",
     "files/common/etc/icinga/objects/generic-contact.cfg": "90472bfed87fb11c737ec6e6dd849334",
@@ -53,21 +53,22 @@
     "files/squeeze/etc/icinga/objects/generic-timeperiod.cfg": "09947d6ae69ff984b2ac6161706ca983",
     "lib/facter/disks.rb": "58cd9f4171c2a026812084e2938b73c7",
     "lib/facter/mountpoints.rb": "5731bc2be2740abb7041a3487d360376",
-    "manifests/command.pp": "47543d26b5da4efd071c3e0185412626",
-    "manifests/command/commands.pp": "9f26b687181c0d579829ecaca853e2ba",
-    "manifests/common.pp": "2ccf5157052f7c3d016b035e14f16d87",
-    "manifests/contact.pp": "4245e7b831c6d6f155b966be13d11c8d",
-    "manifests/contact/contactgroups.pp": "6ae8fe2be3c95993d689f950e7ffa82f",
-    "manifests/contact/contacts.pp": "c58b0f2c61ac1848df5134235aa01715",
-    "manifests/host.pp": "0e872bac28821b7e14faf2db3a31d991",
-    "manifests/host/hostextinfo.pp": "ece70b989366464a3bd3a7f39578d1c4",
-    "manifests/host/hostgroups.pp": "efc759761bb34349e952ea7686dc6569",
-    "manifests/host/hosts.pp": "01dc991b81ce182a43d2e3ec246445ff",
-    "manifests/init.pp": "55272df96dd1c897a3a7a06d33ff5607",
-    "manifests/master.pp": "6f80f6cb7177ac8962f2746e728a6d1f",
-    "manifests/service.pp": "0d4f3823778b01709ffa3d5d533b6bad",
-    "manifests/service/servicegroups.pp": "fac1cffa91ecd9a05b17bd2d188a5aac",
-    "manifests/service/services.pp": "0ed2958c9468c4f62ec69b54aa0b507d",
+    "manifests/command.pp": "64aeb2a4e22334f0ddeb56d673b1b231",
+    "manifests/command/commands.pp": "df419984ecaa6ed5146b751fe92972e4",
+    "manifests/common.pp": "9c150676efe7d7025872e6ef7c1e5ae1",
+    "manifests/contact.pp": "128b8bc974ea7653d11cc65f1faec381",
+    "manifests/contact/contactgroups.pp": "f7b9b0ddbc526aff5780e87b1c4fedd8",
+    "manifests/contact/contacts.pp": "8d4a69e1aa3b1566ef4b8f1ea15ce520",
+    "manifests/host.pp": "dc93eba956c56b27190720b6cd8bcdc0",
+    "manifests/host/hostextinfo.pp": "54d628ea3149e422f77f865bbf7efa35",
+    "manifests/host/hostgroups.pp": "5597153ae9e247c44a604365cf66c379",
+    "manifests/host/hosts.pp": "de03d7ad0614bf23fa7f1072db200f0a",
+    "manifests/init.pp": "20ae98f7206202bd27492f38f1be70ab",
+    "manifests/master.pp": "e5ea82ff336832552999338c6637b628",
+    "manifests/service.pp": "a691553b6920909fbc3b3d3950d06c7d",
+    "manifests/service/servicegroups.pp": "7b3f5057677747f8e9d4db7100167a6e",
+    "manifests/service/services.pp": "c9d77bbe45825fab0abd8fe8207b4c67",
+    "manifests/whitelist.pp": "6a3d1a4d24a401995049d5c3a9e5c674",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
     "templates/common/etc/icinga/htpasswd.users.erb": "508a69aa1bedc852df661a928970e669",
@@ -78,15 +79,15 @@
   "dependencies": [
     {
       "name": "dhoppe/puppet",
-      "versionRequirement": "\u003e\u003d0.0.1"
+      "version_requirement": "\u003e\u003d0.0.1"
     },
     {
       "name": "dhoppe/role",
-      "versionRequirement": "\u003e\u003d0.0.1"
+      "version_requirement": "\u003e\u003d0.0.1"
     },
     {
       "name": "dhoppe/sudo",
-      "versionRequirement": "\u003e\u003d0.0.1"
+      "version_requirement": "\u003e\u003d0.0.1"
     }
   ]
 }
