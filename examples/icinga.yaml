@@ -8,7 +8,6 @@ contactgroups:
    group: 'admins'
    alias: 'Debian Solutions'
 hostgroups:
-   - 'lenny'
    - 'squeeze'
    - 'maverick'
    - 'natty'
