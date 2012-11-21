@@ -9,7 +9,6 @@ contactgroups:
    alias: 'Debian Solutions'
 hostgroups:
    - 'squeeze'
-   - 'natty'
 servicegroups:
    - 'apt'
    - 'disks'
