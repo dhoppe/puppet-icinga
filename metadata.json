@@ -8,9 +8,9 @@
   "summary": "Icinga Module",
   "version": "0.0.27",
   "checksums": {
-    ".project": "e9a62b42390c6965a1e7dd2a83d8d322",
     ".travis.yml": "c4089256774e5cb9094e91a3fe1c2780",
     "Gemfile": "d5ce5c80f3c31e583507eb80b61b7400",
+    "LICENSE": "b234ee4d69f5fce4486a80fdaf4a4263",
     "Modulefile": "d4dbe54e402d8e8774de2fc1dbe068fe",
     "README": "0d054da72567eeaec961a4051cd57848",
     "Rakefile": "17e38802c4cef92b76ce3c00b9e339ec",
