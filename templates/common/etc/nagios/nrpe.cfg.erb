@@ -83,7 +83,7 @@ nrpe_group=nagios
 <% if t_whitelist.length > 1 -%>
 allowed_hosts=<%= t_whitelist.join(",") %>
 <% else -%>
-allowed_hosts=<%= t_whitelist %>
+allowed_hosts=<%= t_whitelist[0] %>
 <% end -%>
  
 
